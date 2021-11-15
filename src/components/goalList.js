@@ -1,11 +1,11 @@
 import React from "react";
 import Goal from "./goal";
 
-const GoalList = ({ goalList, setGoalList }) => {
+const GoalList = ({ goalList, setGoalList, filteredGoalList }) => {
     return (
         <div>
             <ul>
-                {goalList.map((goal) => (
+                {filteredGoalList.map((goal) => (
                     <Goal
                         key={goal.id}
                         goal={goal}
