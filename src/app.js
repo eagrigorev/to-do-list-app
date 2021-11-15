@@ -17,7 +17,7 @@ const App = () => {
                 goal={goal}
                 setGoal={setGoal}
             />
-            <GoalList goalList={goalList} />
+            <GoalList goalList={goalList} setGoalList={setGoalList} />
         </div>
     );
 };
