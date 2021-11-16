@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./css/app.css";
-import Form from "./components/form";
-import GoalList from "./components/goalList";
+import FormContainer from "./components/formContainer";
+import GoalListContainer from "./components/goalListContainer";
 
 const App = () => {
-    const [goal, setGoal] = useState("");
     const [goalList, setGoalList] = useState([]);
     const [filteredGoalList, setFilteredGoalList] = useState([]);
     const [categories, setCategories] = useState("all");
@@ -48,18 +47,8 @@ const App = () => {
             <header>
                 <h1>To Do List App</h1>
             </header>
-            <Form
-                goalList={goalList}
-                setGoalList={setGoalList}
-                goal={goal}
-                setGoal={setGoal}
-                setCategories={setCategories}
-            />
-            <GoalList
-                goalList={goalList}
-                setGoalList={setGoalList}
-                filteredGoalList={filteredGoalList}
-            />
+            <FormContainer setCategories={setCategories} />
+            <GoalListContainer filteredGoalList={filteredGoalList} />
         </div>
     );
 };
