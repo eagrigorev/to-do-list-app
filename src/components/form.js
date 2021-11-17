@@ -4,7 +4,7 @@ const Form = ({
     inputGoalTitleHandler,
     inputGoalDescriptionHandler,
     goalListAddItemHandler,
-    categoriesHandler,
+    displayModeHandler,
 }) => {
     return (
         <form id="goalSubmission">
@@ -22,7 +22,7 @@ const Form = ({
                 Submit
             </button>
             <div>
-                <select onChange={categoriesHandler} name="categories">
+                <select onChange={displayModeHandler} name="categories">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>

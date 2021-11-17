@@ -7,8 +7,9 @@ import {
     goalDescriptionChange,
 } from "../store/actions/goalActions";
 import { goalListAddItem } from "../store/actions/goalListActions";
+import { displayModeChange } from "../store/actions/displayActions";
 
-const FormContainer = ({ setCategories }) => {
+const FormContainer = () => {
     const dispatch = useDispatch();
     const { goalTitle, goalDescription } = useSelector(getGoal);
     const inputGoalTitleHandler = (event) => {
@@ -26,15 +27,15 @@ const FormContainer = ({ setCategories }) => {
             document.getElementById("goalSubmission").reset();
         }
     };
-    const categoriesHandler = (event) => {
-        setCategories(event.target.value);
+    const displayModeHandler = (event) => {
+        dispatch(displayModeChange(event.target.value));
     };
     return (
         <Form
             inputGoalTitleHandler={inputGoalTitleHandler}
             inputGoalDescriptionHandler={inputGoalDescriptionHandler}
             goalListAddItemHandler={goalListAddItemHandler}
-            categoriesHandler={categoriesHandler}
+            displayModeHandler={displayModeHandler}
         />
     );
 };
