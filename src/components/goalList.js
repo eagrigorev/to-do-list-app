@@ -1,20 +1,19 @@
 import React from "react";
-import Goal from "./goal";
 
-const GoalList = ({ goalList, setGoalList, filteredGoalList }) => {
+const GoalList = ({ goal, completeHandler, deleteHandler }) => {
     return (
-        <div>
-            <ul>
-                {filteredGoalList.map((goal) => (
-                    <Goal
-                        key={goal.id}
-                        goal={goal}
-                        goalList={goalList}
-                        setGoalList={setGoalList}
-                    />
-                ))}
-            </ul>
-        </div>
+        <>
+            <li className={`${goal.completed ? "completed" : ""}`}>
+                <h2>{goal.goalTitle}</h2>
+                <p>{goal.goalDescription}</p>
+            </li>
+            <button className={goal.id} onClick={completeHandler}>
+                Complete
+            </button>
+            <button className={goal.id} onClick={deleteHandler}>
+                Delete
+            </button>
+        </>
     );
 };
 

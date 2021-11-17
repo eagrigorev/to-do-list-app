@@ -1,30 +1,28 @@
 import React from "react";
 
-const Form = ({ goal, setGoal, goalList, setGoalList, setCategories }) => {
-    const inputGoalHandler = (event) => {
-        setGoal(event.target.value);
-    };
-    const submitGoalHandler = (event) => {
-        event.preventDefault();
-        setGoalList([
-            ...goalList,
-            {
-                id: Math.random() * 1000,
-                description: goal,
-                completed: false,
-            },
-        ]);
-        setGoal("");
-    };
-    const categoriesHandler = (event) => {
-        setCategories(event.target.value);
-    };
+const Form = ({
+    inputGoalTitleHandler,
+    inputGoalDescriptionHandler,
+    goalListAddItemHandler,
+    displayModeHandler,
+}) => {
     return (
-        <form>
-            <input value={goal} onChange={inputGoalHandler} type="text" />
-            <button onClick={submitGoalHandler}>Submit</button>
+        <form id="goalSubmission">
+            <input
+                placeholder="Title (required)"
+                onChange={inputGoalTitleHandler}
+                type="text"
+            />
+            <textarea
+                placeholder="Description"
+                onChange={inputGoalDescriptionHandler}
+                type="text"
+            />
+            <button onClick={goalListAddItemHandler} type="submit">
+                Submit
+            </button>
             <div>
-                <select onChange={categoriesHandler} name="categories">
+                <select onChange={displayModeHandler} name="categories">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>
