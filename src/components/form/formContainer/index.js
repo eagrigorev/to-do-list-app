@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "./form";
+import Form from "..";
 import { useSelector, useDispatch } from "react-redux";
-import { getGoal } from "../store/selectors/goalSelectors";
+import { getGoal } from "../../../store/selectors/goalSelectors";
 import {
     goalTitleChange,
     goalDescriptionChange,
-} from "../store/actions/goalActions";
-import { goalListAddItem } from "../store/actions/goalListActions";
-import { displayModeChange } from "../store/actions/displayActions";
+} from "../../../store/actions/goalActions";
+import { goalListAddItem } from "../../../store/actions/goalListActions";
+import { displayModeChange } from "../../../store/actions/displayActions";
 
 const FormContainer = () => {
     const dispatch = useDispatch();

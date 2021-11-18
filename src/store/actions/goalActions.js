@@ -1,4 +1,4 @@
-import { GOAL_TITLE_CHANGE, GOAL_DESCRIPTION_CHANGE } from "../../const";
+import { GOAL_TITLE_CHANGE, GOAL_DESCRIPTION_CHANGE } from "../misc/const";
 
 export const goalTitleChange = (goalTitle) => ({
     type: GOAL_TITLE_CHANGE,

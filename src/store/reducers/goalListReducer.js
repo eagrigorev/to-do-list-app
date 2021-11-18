@@ -3,8 +3,8 @@ import {
     GOAL_LIST_ADD_FROM_LOCAL,
     GOAL_LIST_COMPLETE_ITEM,
     GOAL_LIST_DELETE_ITEM,
-} from "../../const";
-import { generateId } from "../../idGenerator";
+} from "../misc/const";
+import { generateId } from "../misc/idGenerator";
 
 const initialGoalList = [];
 export const goalListReducer = (state = initialGoalList, action) => {

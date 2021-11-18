@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getGoalList } from "./store/selectors/goalListSelectors";
-import { goalListAddFromLocal } from "./store/actions/goalListActions";
-import FormContainer from "./components/formContainer";
-import GoalListContainer from "./components/goalListContainer";
-import "./css/app.css";
+import { getGoalList } from "../../store/selectors/goalListSelectors";
+import { goalListAddFromLocal } from "../../store/actions/goalListActions";
+import FormContainer from "../form/formContainer";
+import GoalListContainer from "../goalList/goalListContainer";
+import "./css/style.css";
 
 const App = () => {
     const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const App = () => {
     return (
         <div className="app">
             <header>
-                <h1>To Do List App</h1>
+                <h1>ToDo List App</h1>
             </header>
             <FormContainer />
             <GoalListContainer />

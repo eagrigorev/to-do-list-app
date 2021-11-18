@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getFilteredGoalList } from "../store/selectors/filteredGoalListSelectors";
+import { getFilteredGoalList } from "../../../store/selectors/filteredGoalListSelectors";
 import {
     goalListDeleteItem,
     goalListCompleteItem,
-} from "../store/actions/goalListActions";
-import { filteredGoalListAddItem } from "../store/actions/filteredGoalListActions";
-import GoalList from "./goalList";
-import { getGoalList } from "../store/selectors/goalListSelectors";
-import { getDisplayMode } from "../store/selectors/displaySelectors";
+} from "../../../store/actions/goalListActions";
+import { filteredGoalListAddItem } from "../../../store/actions/filteredGoalListActions";
+import GoalList from "..";
+import { getGoalList } from "../../../store/selectors/goalListSelectors";
+import { getDisplayMode } from "../../../store/selectors/displaySelectors";
 
 const GoalListContainer = () => {
     const dispatch = useDispatch();

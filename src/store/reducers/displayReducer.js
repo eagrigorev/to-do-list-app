@@ -1,4 +1,4 @@
-import { DISPLAY_MODE } from "../../const";
+import { DISPLAY_MODE } from "../misc/const";
 
 const initialDisplayMode = "all";
 export const displayModeReducer = (state = initialDisplayMode, action) => {

@@ -1,4 +1,4 @@
-import { FILTERED_GOAL_LIST_ADD_ITEM } from "../../const";
+import { FILTERED_GOAL_LIST_ADD_ITEM } from "../misc/const";
 
 const initialFilteredGoalList = [];
 export const filteredGoalListReducer = (
