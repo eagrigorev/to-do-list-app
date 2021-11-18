@@ -1,5 +1,6 @@
 import {
     GOAL_LIST_ADD_ITEM,
+    GOAL_LIST_ADD_FROM_LOCAL,
     GOAL_LIST_COMPLETE_ITEM,
     GOAL_LIST_DELETE_ITEM,
 } from "../../const";
@@ -17,6 +18,9 @@ export const goalListReducer = (state = initialGoalList, action) => {
                     goalDescription: action.payload.goalDescription,
                 },
             ];
+        }
+        case GOAL_LIST_ADD_FROM_LOCAL: {
+            return action.payload.goalList;
         }
         case GOAL_LIST_COMPLETE_ITEM: {
             return state.map((element) => {
