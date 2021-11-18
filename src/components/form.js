@@ -22,7 +22,7 @@ const Form = ({
                 Submit
             </button>
             <div>
-                <select onChange={displayModeHandler} name="categories">
+                <select onChange={displayModeHandler} name="displayMode">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>

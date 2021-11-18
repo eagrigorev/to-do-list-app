@@ -6,13 +6,13 @@ const GoalList = ({ goal, completeHandler, deleteHandler }) => {
             <li className={`${goal.completed ? "completed" : ""}`}>
                 <h2>{goal.goalTitle}</h2>
                 <p>{goal.goalDescription}</p>
+                <button className={goal.id} onClick={completeHandler}>
+                    Complete
+                </button>
+                <button className={goal.id} onClick={deleteHandler}>
+                    Delete
+                </button>
             </li>
-            <button className={goal.id} onClick={completeHandler}>
-                Complete
-            </button>
-            <button className={goal.id} onClick={deleteHandler}>
-                Delete
-            </button>
         </>
     );
 };
