@@ -4,6 +4,7 @@ import {
     GOAL_LIST_COMPLETE_ITEM,
     GOAL_LIST_DELETE_ITEM,
 } from "../../const";
+import { generateId } from "../../idGenerator";
 
 const initialGoalList = [];
 export const goalListReducer = (state = initialGoalList, action) => {
@@ -12,7 +13,7 @@ export const goalListReducer = (state = initialGoalList, action) => {
             return [
                 ...state,
                 {
-                    id: Math.random() * 1000,
+                    id: generateId(5),
                     completed: false,
                     goalTitle: action.payload.goalTitle,
                     goalDescription: action.payload.goalDescription,

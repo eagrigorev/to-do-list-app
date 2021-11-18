@@ -16,10 +16,10 @@ const GoalListContainer = () => {
     const goalList = useSelector(getGoalList);
     const filteredGoalList = useSelector(getFilteredGoalList);
     const completeHandler = (event) => {
-        dispatch(goalListCompleteItem(+event.target.className));
+        dispatch(goalListCompleteItem(event.target.className));
     };
     const deleteHandler = (event) => {
-        dispatch(goalListDeleteItem(+event.target.className));
+        dispatch(goalListDeleteItem(event.target.className));
     };
     const goalListDisplay = () => {
         switch (displayMode) {
