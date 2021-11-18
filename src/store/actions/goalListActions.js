@@ -1,5 +1,6 @@
 import {
     GOAL_LIST_ADD_ITEM,
+    GOAL_LIST_ADD_FROM_LOCAL,
     GOAL_LIST_COMPLETE_ITEM,
     GOAL_LIST_DELETE_ITEM,
 } from "../../const";
@@ -9,6 +10,12 @@ export const goalListAddItem = (goalTitle, goalDescription) => ({
     payload: {
         goalTitle,
         goalDescription,
+    },
+});
+export const goalListAddFromLocal = (goalList) => ({
+    type: GOAL_LIST_ADD_FROM_LOCAL,
+    payload: {
+        goalList,
     },
 });
 export const goalListDeleteItem = (id) => ({
