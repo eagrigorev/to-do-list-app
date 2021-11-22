@@ -6,23 +6,29 @@ const Form = ({
     goalListAddItemHandler,
 }) => {
     return (
-        <section>
+        <section className="form">
             <h2>New Goal</h2>
             <form id="goalSubmission">
-                <div>
+                <div className="form__inputs">
                     <input
+                        className="form__inputs__title"
                         placeholder="Title (required)"
                         onChange={inputGoalTitleHandler}
                         type="text"
                     />
-                    <input placeholder="Category" type="text" />
+                    <input
+                        className="form__inputs__category"
+                        placeholder="Category"
+                        type="text"
+                    />
+                    <textarea
+                        rows="4"
+                        placeholder="Description"
+                        onChange={inputGoalDescriptionHandler}
+                        type="text"
+                    ></textarea>
                 </div>
-                <textarea
-                    placeholder="Description"
-                    onChange={inputGoalDescriptionHandler}
-                    type="text"
-                ></textarea>
-                <div>
+                <div className="form__buttons">
                     <button onClick={goalListAddItemHandler} type="submit">
                         Submit
                     </button>
