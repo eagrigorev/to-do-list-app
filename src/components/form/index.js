@@ -4,31 +4,32 @@ const Form = ({
     inputGoalTitleHandler,
     inputGoalDescriptionHandler,
     goalListAddItemHandler,
-    displayModeHandler,
 }) => {
     return (
-        <form id="goalSubmission">
-            <input
-                placeholder="Title (required)"
-                onChange={inputGoalTitleHandler}
-                type="text"
-            />
-            <textarea
-                placeholder="Description"
-                onChange={inputGoalDescriptionHandler}
-                type="text"
-            />
-            <button onClick={goalListAddItemHandler} type="submit">
-                Submit
-            </button>
-            <div>
-                <select onChange={displayModeHandler} name="displayMode">
-                    <option value="all">All</option>
-                    <option value="completed">Completed</option>
-                    <option value="uncompleted">Uncompleted</option>
-                </select>
-            </div>
-        </form>
+        <section>
+            <h2>New Goal</h2>
+            <form id="goalSubmission">
+                <div>
+                    <input
+                        placeholder="Title (required)"
+                        onChange={inputGoalTitleHandler}
+                        type="text"
+                    />
+                    <input placeholder="Category" type="text" />
+                </div>
+                <textarea
+                    placeholder="Description"
+                    onChange={inputGoalDescriptionHandler}
+                    type="text"
+                ></textarea>
+                <div>
+                    <button onClick={goalListAddItemHandler} type="submit">
+                        Submit
+                    </button>
+                    <button>Clear</button>
+                </div>
+            </form>
+        </section>
     );
 };
 

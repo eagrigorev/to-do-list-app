@@ -31,8 +31,10 @@ const App = () => {
             <header>
                 <h1>ToDo List App</h1>
             </header>
-            <FormContainer />
-            <GoalListContainer />
+            <main>
+                <FormContainer />
+                <GoalListContainer />
+            </main>
         </div>
     );
 };

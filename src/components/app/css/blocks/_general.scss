@@ -1,5 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: $font-primary;
     text-align: left;
+}
+.app {
+    max-width: 1200px;
+}
+main {
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+header {
+    h1 {
+    }
 }

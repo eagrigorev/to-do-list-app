@@ -9,6 +9,7 @@ import { filteredGoalListAddItem } from "../../../store/actions/filteredGoalList
 import GoalList from "..";
 import { getGoalList } from "../../../store/selectors/goalListSelectors";
 import { getDisplayMode } from "../../../store/selectors/displaySelectors";
+import { displayModeChange } from "../../../store/actions/displayActions";
 
 const GoalListContainer = () => {
     const dispatch = useDispatch();
@@ -40,22 +41,19 @@ const GoalListContainer = () => {
                 break;
         }
     };
+    const displayModeHandler = (event) => {
+        dispatch(displayModeChange(event.target.value));
+    };
     useEffect(() => {
         goalListDisplay();
     }, [displayMode, goalList]);
     return (
-        <div>
-            <ul>
-                {filteredGoalList.map((goal) => (
-                    <GoalList
-                        key={goal.id}
-                        goal={goal}
-                        completeHandler={completeHandler}
-                        deleteHandler={deleteHandler}
-                    />
-                ))}
-            </ul>
-        </div>
+        <GoalList
+            filteredGoalList={filteredGoalList}
+            completeHandler={completeHandler}
+            deleteHandler={deleteHandler}
+            displayModeHandler={displayModeHandler}
+        />
     );
 };
 

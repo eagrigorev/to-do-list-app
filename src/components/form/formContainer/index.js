@@ -7,7 +7,6 @@ import {
     goalDescriptionChange,
 } from "../../../store/actions/goalActions";
 import { goalListAddItem } from "../../../store/actions/goalListActions";
-import { displayModeChange } from "../../../store/actions/displayActions";
 
 const FormContainer = () => {
     const dispatch = useDispatch();
@@ -27,15 +26,11 @@ const FormContainer = () => {
             document.getElementById("goalSubmission").reset();
         }
     };
-    const displayModeHandler = (event) => {
-        dispatch(displayModeChange(event.target.value));
-    };
     return (
         <Form
             inputGoalTitleHandler={inputGoalTitleHandler}
             inputGoalDescriptionHandler={inputGoalDescriptionHandler}
             goalListAddItemHandler={goalListAddItemHandler}
-            displayModeHandler={displayModeHandler}
         />
     );
 };
