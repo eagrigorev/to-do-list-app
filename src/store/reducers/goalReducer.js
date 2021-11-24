@@ -1,4 +1,4 @@
-import { GOAL_TITLE_CHANGE, GOAL_DESCRIPTION_CHANGE } from "../../const";
+import { GOAL_TITLE_CHANGE, GOAL_DESCRIPTION_CHANGE } from "../misc/const";
 
 const initialGoal = {};
 export const goalReducer = (state = initialGoal, action) => {

@@ -1,0 +1,46 @@
+.goalList {
+    width: 50%;
+    &__heading {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        & select {
+            padding: 10px;
+        }
+    }
+    &__items {
+        margin-top: 15px;
+        &__item {
+            &__buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+        }
+    }
+}
+ul {
+    height: 500px;
+    overflow: auto;
+    li {
+        list-style: none;
+    }
+}
+article {
+    margin-top: 15px;
+    position: relative;
+    padding: 10px;
+    min-height: 100px;
+    border: 1px solid $color-dark;
+    & h3 {
+        width: 70%;
+        text-transform: uppercase;
+    }
+    & p {
+        padding-top: 10px;
+        width: 80%;
+    }
+}

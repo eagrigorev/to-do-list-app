@@ -1,0 +1,28 @@
+.form {
+    width: 45%;
+    & form {
+        padding-top: 41px;
+    }
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &__title {
+            width: 60%;
+        }
+        &__category {
+            width: 30%;
+        }
+    }
+    & textarea {
+        margin-top: 10px;
+        width: 100%;
+        resize: none;
+    }
+    &__buttons {
+        padding-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}

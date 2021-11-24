@@ -1,4 +1,4 @@
-import { DISPLAY_MODE } from "../../const";
+import { DISPLAY_MODE } from "../misc/const";
 
 export const displayModeChange = (displayMode) => ({
     type: DISPLAY_MODE,
