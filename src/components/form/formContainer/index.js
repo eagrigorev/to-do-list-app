@@ -11,7 +11,7 @@ import { goalListAddItem } from "../../../store/actions/goalListActions";
 
 const FormContainer = () => {
     const dispatch = useDispatch();
-    const { goalTitle, goalDescription,goalCategory } = useSelector(getGoal);
+    const { goalTitle, goalDescription, goalCategory } = useSelector(getGoal);
     const inputGoalTitleHandler = (event) => {
         dispatch(goalTitleChange(event.target.value));
     };
@@ -24,7 +24,15 @@ const FormContainer = () => {
     const goalListAddItemHandler = (event) => {
         event.preventDefault();
         if (goalTitle != null) {
-            dispatch(goalListAddItem(goalTitle, goalDescription));
+            if (goalCategory != null) {
+                dispatch(
+                    goalListAddItem(goalTitle, goalDescription, goalCategory)
+                );
+            } else {
+                dispatch(
+                    goalListAddItem(goalTitle, goalDescription, "uncategorized")
+                );
+            }
             dispatch(goalTitleChange());
             dispatch(goalDescriptionChange());
             dispatch(goalCategoryChange());
