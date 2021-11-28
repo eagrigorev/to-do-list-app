@@ -29,17 +29,18 @@ const GoalList = ({
                         >
                             <article>
                                 <h3>{goal.goalTitle}</h3>
+                                <p className="goalList__items__item__category">
+                                    📝 {goal.goalCategory}
+                                </p>
                                 <p>{goal.goalDescription}</p>
                                 <div className="goalList__items__item__buttons">
                                     <button
-                                        className="goalList__items__item__buttons__complete"
                                         className={goal.id}
                                         onClick={completeHandler}
                                     >
                                         Complete
                                     </button>
                                     <button
-                                        className="goalList__items__item__buttons__delete"
                                         className={goal.id}
                                         onClick={deleteHandler}
                                     >

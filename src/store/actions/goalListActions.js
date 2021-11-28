@@ -5,11 +5,12 @@ import {
     GOAL_LIST_DELETE_ITEM,
 } from "../misc/const";
 
-export const goalListAddItem = (goalTitle, goalDescription) => ({
+export const goalListAddItem = (goalTitle, goalDescription, goalCategory) => ({
     type: GOAL_LIST_ADD_ITEM,
     payload: {
         goalTitle,
         goalDescription,
+        goalCategory,
     },
 });
 export const goalListAddFromLocal = (goalList) => ({

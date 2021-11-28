@@ -105,6 +105,10 @@ button:hover {
   margin-top: 15px;
 }
 
+.goalList__items__item__category {
+  text-transform: uppercase;
+}
+
 .goalList__items__item__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,6 +121,10 @@ button:hover {
   position: absolute;
   right: 10px;
   top: 10px;
+}
+
+.goalList__items__item--completed {
+  text-decoration: line-through;
 }
 
 ul {

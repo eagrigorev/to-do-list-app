@@ -16,6 +16,7 @@ export const goalListReducer = (state = initialGoalList, action) => {
                     id: generateId(5),
                     completed: false,
                     goalTitle: action.payload.goalTitle,
+                    goalCategory: action.payload.goalCategory,
                     goalDescription: action.payload.goalDescription,
                 },
             ];

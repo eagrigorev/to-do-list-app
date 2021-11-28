@@ -5,24 +5,37 @@ import { getGoal } from "../../../store/selectors/goalSelectors";
 import {
     goalTitleChange,
     goalDescriptionChange,
+    goalCategoryChange,
 } from "../../../store/actions/goalActions";
 import { goalListAddItem } from "../../../store/actions/goalListActions";
 
 const FormContainer = () => {
     const dispatch = useDispatch();
-    const { goalTitle, goalDescription } = useSelector(getGoal);
+    const { goalTitle, goalDescription, goalCategory } = useSelector(getGoal);
     const inputGoalTitleHandler = (event) => {
         dispatch(goalTitleChange(event.target.value));
     };
     const inputGoalDescriptionHandler = (event) => {
         dispatch(goalDescriptionChange(event.target.value));
     };
+    const inputGoalCategoryHandler = (event) => {
+        dispatch(goalCategoryChange(event.target.value));
+    };
     const goalListAddItemHandler = (event) => {
         event.preventDefault();
         if (goalTitle != null) {
-            dispatch(goalListAddItem(goalTitle, goalDescription));
+            if (goalCategory != null) {
+                dispatch(
+                    goalListAddItem(goalTitle, goalDescription, goalCategory)
+                );
+            } else {
+                dispatch(
+                    goalListAddItem(goalTitle, goalDescription, "uncategorized")
+                );
+            }
             dispatch(goalTitleChange());
             dispatch(goalDescriptionChange());
+            dispatch(goalCategoryChange());
             document.getElementById("goalSubmission").reset();
         }
     };
@@ -30,6 +43,7 @@ const FormContainer = () => {
         <Form
             inputGoalTitleHandler={inputGoalTitleHandler}
             inputGoalDescriptionHandler={inputGoalDescriptionHandler}
+            inputGoalCategoryHandler={inputGoalCategoryHandler}
             goalListAddItemHandler={goalListAddItemHandler}
         />
     );

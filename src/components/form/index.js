@@ -3,6 +3,7 @@ import React from "react";
 const Form = ({
     inputGoalTitleHandler,
     inputGoalDescriptionHandler,
+    inputGoalCategoryHandler,
     goalListAddItemHandler,
 }) => {
     return (
@@ -19,6 +20,7 @@ const Form = ({
                     <input
                         className="form__inputs__category"
                         placeholder="Category"
+                        onChange={inputGoalCategoryHandler}
                         type="text"
                     />
                     <textarea
