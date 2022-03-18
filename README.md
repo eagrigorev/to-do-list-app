@@ -1,4 +1,4 @@
-## Task List App
+## To Do List
 
 ### Running the App
 
